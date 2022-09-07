@@ -10,6 +10,6 @@ for path, subdirs, files in os.walk(root):
             pathFile = (os.path.join(path, name)).replace("'","\\'").replace(" ","\\ ")
             print("Converting... "+pathFile)
             
-            os.system("ffmpeg -i "+pathFile+" -c copy "+ pathFile[:-4]+".mp4")
+            os.system("ffmpeg -i "+pathFile+" -c copy -strict -2 "+ pathFile[:-4]+".mp4")
             os.system("rm "+pathFile)
             time.sleep(5)
